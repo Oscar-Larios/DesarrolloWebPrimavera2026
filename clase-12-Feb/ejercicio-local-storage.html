@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Local Storage Simple</title>
+</head>
+<body>
+
+<h1>Formulario</h1>
+
+<form id="formulario">
+  Nombre:
+  <input type="text" id="nombre"><br><br>
+
+  Color favorito:
+  <input type="color" id="color"><br><br>
+
+  <button type="submit">Guardar</button>
+  <button type="button" id="mostrar">Mostrar</button>
+  <button type="button" id="borrar">Borrar</button>
+</form>
+
+<p id="resultado">No hay datos guardados</p>
+
+<script>
+
+const form = document.getElementById("formulario");
+const nombre = document.getElementById("nombre");
+const color = document.getElementById("color");
+const resultado = document.getElementById("resultado");
+
+form.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let datos = {
+        nombre: nombre.value,
+        color: color.value
+    };
+
+    localStorage.setItem("usuario", JSON.stringify(datos));
+    resultado.innerHTML = "Datos guardados";
+});
+
+document.getElementById("mostrar").addEventListener("click", function(){
+
+    let datosGuardados = localStorage.getItem("usuario");
+
+    if(datosGuardados){
+        let datos = JSON.parse(datosGuardados);
+
+        resultado.innerHTML =
+            "Nombre: " + datos.nombre +
+            "<br><br>"+
+            "Color:&nbsp&nbsp;" +
+            "<span style='background:"+datos.color+";padding:3px 15px;'></span>";
+    } else {
+        resultado.innerHTML = "No hay datos guardados";
+    }
+
+});
+
+document.getElementById("borrar").addEventListener("click", function(){
+    localStorage.removeItem("usuario");
+    resultado.innerHTML = "Datos borrados";
+});
+
+</script>
+
+</body>
+</html>

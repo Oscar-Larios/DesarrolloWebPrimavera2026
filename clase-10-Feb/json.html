@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Guardar datos con Local Storage</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        input {
+            padding: 8px;
+            width: 250px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 8px 14px;
+            margin-left: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #pantalla {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            min-width: 250px;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Guardar información</h1>
+
+    <input type="text" id="texto" placeholder="Escribe algo aquí">
+
+    <button onclick="guardarLocal()">Guardar en Local Storage</button>
+    <button onclick="mostrarLocal()">Mostrar lo guardado</button>
+
+    <div id="pantalla">
+        <strong>Texto en pantalla:</strong>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function guardarLocal() {
+            const texto = document.getElementById("texto").value;
+            localStorage.setItem("dato", texto);
+            alert("Texto guardado en Local Storage");
+        }
+
+        function mostrarLocal() {
+            const guardado = localStorage.getItem("dato");
+            document.getElementById("resultado").textContent =
+                guardado ? guardado : "No hay nada guardado";
+        }
+    </script>
+
+</body>
+</html>

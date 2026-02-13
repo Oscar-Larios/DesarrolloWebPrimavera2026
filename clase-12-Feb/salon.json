@@ -1,0 +1,10 @@
+{
+    "profesor":{
+        "nombre": "Olari",
+        "intereses_profesionales": [
+            "programación", 
+            "tecnología", 
+            "música"
+        ]
+    }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mostrar / Ocultar Imagen con Tooltip</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        button {
+            padding: 10px 16px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .img-container {
+            position: relative;
+            width: fit-content;
+            margin: auto;
+        }
+
+        .img-container img {
+            width: 300px;
+            cursor: pointer;
+            display: none; /* Empieza oculta */
+        }
+
+        .tooltip-text {
+            position: absolute;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+
+            background-color: black;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+
+            display: none;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Mostrar / Ocultar Imagen con Tooltip</h1>
+
+    <button onclick="mostrarImagen()">Mostrar imagen</button>
+    <button onclick="ocultarImagen()">Ocultar imagen</button>
+
+    <br><br> 
+
+    <div class="img-container">
+        <img
+            id="imagen"
+            src="imagen-vectorial.webp"
+            alt="Imagen de ejemplo"
+            onmouseover="mostrarTexto()"
+            onmouseout="ocultarTexto()"
+        >
+
+        <div id="texto" class="tooltip-text">
+            Texto informativo sobre la imagen
+        </div>
+    </div>
+
+    <script>
+        function mostrarImagen() {
+            document.getElementById("imagen").style.display = "block";
+        }
+
+        function ocultarImagen() {
+            document.getElementById("imagen").style.display = "none";
+            ocultarTexto(); // por si el tooltip está visible
+        }
+
+        function mostrarTexto() {
+            document.getElementById("texto").style.display = "block";
+        }
+
+        function ocultarTexto() {
+            document.getElementById("texto").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
