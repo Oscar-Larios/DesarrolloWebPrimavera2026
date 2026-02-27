@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artistas Spotify</title>
+  </head>
+  <body>
+
+  <button onclick="obtenerArtista()">Obtener artista</button>
+  <div id="informacion"></div>
+  <img id="imagen">
+
+    <script>
+      
+    function formatearArtista(artista) {
+      let respuesta =
+        "<div>" +
+          "<h1>" + artista.name + "</h1>" +
+          "<p>Popularidad: " + artista.popularity + "</p>" +
+        "</div>";
+
+      return respuesta;
+    }
+      
+      function obtenerArtista() {
+        const parametros = {
+          method: "GET",
+          headers: {
+            Authorization: "Bearer BQBf-Nt9UfmkoyFQuWc-V0OhoSbYIGfUGXkcqIyDMbRUdQJx0zxfnrx0A99l6kELd62Z6mWQXY-i9asZ_QuPisULsauc6np99JgzzTaNWEn83S01P3MIhpT9E9htBD6m8tlgXHmRBUo",
+          },
+        };
+
+        fetch("https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg", parametros)
+          .then((respuesta) => {
+            if (!respuesta.ok) {
+              throw new Error("Error en la petición");
+            }
+            return respuesta.json();
+          })
+          .then((datos) => {
+            const contenedorInformacion = document.getElementById("informacion");
+            contenedorInformacion.innerHTML = formatearArtista(datos);
+
+          })
+          .catch((error) => {
+            console.error("Error al obtener el artista:", error);
+          });
+          }
+    </script>
+
+  </body>
+</html>
+

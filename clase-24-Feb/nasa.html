@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NASA APOD</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <div class="card mx-auto" style="width: 22rem;">
+      <img id="imagen" src="" class="card-img-top" alt="NASA image">
+      <div class="card-body">
+        <h5 id="titulo" class="card-title">Cargando...</h5>
+        <p id="descripcion" class="card-text"></p>
+        <a id="boton" href="#" target="_blank" class="btn btn-primary">Ver en HD</a>
+      </div>
+    </div>
+
+
+    <script>
+      async function cargarAPOD() {
+        try {
+          const response = await fetch("https://api.nasa.gov/planetary/apod?api_key=K6QnVQQijHvoI6eV9JxY1NdMaAqD7QeFlt2pzN7f");
+          const data = await response.json();
+
+          document.getElementById("imagen").src = data.url;
+          document.getElementById("titulo").textContent = data.title;
+          document.getElementById("descripcion").textContent = data.explanation;
+          document.getElementById("boton").href = data.hdurl;
+
+        } catch (error) {
+          console.error("Error al obtener datos:", error);
+        }
+      }
+
+      cargarAPOD();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
