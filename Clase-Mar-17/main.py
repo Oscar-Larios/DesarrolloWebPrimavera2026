@@ -149,4 +149,13 @@ app.add_middleware(
 
 @app.get("/")
 def root():
-    return {"message": "Bienvenido a la API de mascotas!"}
+    total = len(solicitudes)
+    por_estado = {"pendiente": 0, "aceptada": 0, "rechazada": 0}
+    for s in solicitudes.values():
+        por_estado[s["estado"]] += 1
+
+    return {
+        "message": "Bienvenido a la API de mascotas!",
+        "solicitudes_actuales": total,
+        "por_estado": por_estado
+    }
