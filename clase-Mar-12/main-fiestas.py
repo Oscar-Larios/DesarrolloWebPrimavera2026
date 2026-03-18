@@ -19,7 +19,7 @@ def crear_fiesta(fiesta: Fiesta):
         "nombre": fiesta.nombre,
         "fecha": fiesta.fecha,
         "lugar": fiesta.lugar,
-        "activo": fiesta.activo
+        "activo": True
     }
     return fiestas_en_memoria[id_generado]
 
