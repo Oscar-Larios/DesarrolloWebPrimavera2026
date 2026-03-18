@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Adopciones</title>
+  <style>
+    body { font-family: sans-serif; max-width: 700px; margin: 40px auto; padding: 0 16px; color: #222; }
+    h1 { font-size: 1.4rem; margin-bottom: 1.5rem; }
+    h2 { font-size: 1rem; margin: 1.5rem 0 .6rem; }
+
+    input, textarea, select, button {
+      font-size: .93rem;
+      padding: .45rem .7rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input, textarea, select { width: 100%; margin-bottom: .6rem; }
+    textarea { resize: vertical; min-height: 70px; }
+    button { cursor: pointer; background: #333; color: #fff; border-color: #333; }
+    button:hover { background: #555; }
+    button.secundario { background: #fff; color: #333; }
+    button.peligro { background: #c0392b; border-color: #c0392b; }
+
+    .fila { display: flex; gap: .5rem; margin-bottom: 1rem; }
+    .fila input { flex: 1; margin: 0; }
+
+    hr { border: none; border-top: 1px solid #eee; margin: 1.5rem 0; }
+
+    .solicitud {
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: .8rem 1rem;
+      margin-bottom: .7rem;
+    }
+    .solicitud .cabecera { display: flex; justify-content: space-between; align-items: center; margin-bottom: .3rem; }
+    .solicitud strong { font-size: .97rem; }
+    .solicitud small { color: #888; font-size: .78rem; display: block; }
+    .solicitud p { font-size: .88rem; color: #444; margin: .3rem 0 .6rem; }
+    .acciones { display: flex; gap: .4rem; flex-wrap: wrap; }
+    .acciones button { padding: .3rem .7rem; font-size: .82rem; }
+
+    .badge {
+      font-size: .75rem;
+      padding: .15rem .5rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    .pendiente  { background: #fff3cd; color: #7a5c00; }
+    .aceptada   { background: #d4edda; color: #155724; }
+    .rechazada  { background: #f8d7da; color: #721c24; }
+
+    #toast {
+      position: fixed; bottom: 1.5rem; left: 50%;
+      transform: translateX(-50%);
+      background: #333; color: #fff;
+      padding: .5rem 1.2rem; border-radius: 5px;
+      font-size: .88rem; display: none;
+    }
+
+    dialog { border: 1px solid #ccc; border-radius: 8px; padding: 1.5rem; max-width: 380px; width: 100%; }
+    dialog h3 { margin: 0 0 1rem; font-size: 1rem; }
+    dialog .acciones { margin-top: 1rem; }
+  </style>
+</head>
+<body>
+
+<h1>Solicitudes de adopción</h1>
+
+<!-- FORMULARIO -->
+<h2>Nueva solicitud</h2>
+<input id="inp-nombre"  type="text"  placeholder="Nombre" />
+<input id="inp-mascota" type="text"  placeholder="Mascota deseada" />
+<textarea id="inp-motivo" placeholder="Motivo"></textarea>
+<button onclick="crear()">Enviar solicitud</button>
+
+<hr/>
+
+<!-- LISTA -->
+<h2>Solicitudes</h2>
+<div class="fila">
+  <input id="inp-buscar" type="text" placeholder="Buscar por nombre…" onkeydown="if(event.key==='Enter')buscar()"/>
+  <button onclick="buscar()">Buscar</button>
+  <button class="secundario" onclick="cargar()">Ver todas</button>
+</div>
+<div id="lista"></div>
+
+<!-- MODAL EDITAR -->
+<dialog id="dlg-editar">
+  <h3>Editar solicitud</h3>
+  <input  id="edit-mascota" type="text" placeholder="Mascota deseada" />
+  <textarea id="edit-motivo" placeholder="Motivo"></textarea>
+  <div class="acciones">
+    <button onclick="guardar()">Guardar</button>
+    <button class="secundario" onclick="document.getElementById('dlg-editar').close()">Cancelar</button>
+  </div>
+</dialog>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<script>
+  const API = 'http://localhost:8000';
+  let editandoId = null;
+
+  // ── Toast ──────────────────────────────────
+  let t;
+  function toast(msg) {
+    const el = document.getElementById('toast');
+    el.textContent = msg; el.style.display = 'block';
+    clearTimeout(t);
+    t = setTimeout(() => el.style.display = 'none', 2500);
+  }
+
+  // ── Fetch solicitudes ──────────────────────
+  async function cargar() {
+    document.getElementById('inp-buscar').value = '';
+    await fetchLista();
+  }
+
+  async function buscar() {
+    const q = document.getElementById('inp-buscar').value.trim();
+    await fetchLista(q);
+  }
+
+  async function fetchLista(nombre = '') {
+    const url = nombre ? `${API}/solicitudes?nombre=${encodeURIComponent(nombre)}` : `${API}/solicitudes`;
+    try {
+      const res = await fetch(url);
+      const data = await res.json();
+      render(data);
+    } catch {
+      document.getElementById('lista').innerHTML = '<p style="color:red">No se pudo conectar con la API.</p>';
+    }
+  }
+
+  // ── Render ─────────────────────────────────
+  function render(lista) {
+    const el = document.getElementById('lista');
+    if (!lista.length) { el.innerHTML = '<p style="color:#888">Sin solicitudes.</p>'; return; }
+    el.innerHTML = '';
+    lista.forEach(s => {
+      el.insertAdjacentHTML('beforeend', `
+        <div class="solicitud" id="s-${s.id}">
+          <div class="cabecera">
+            <strong>${esc(s.nombrePersona)}</strong>
+            <span class="badge ${s.estado}">${s.estado}</span>
+          </div>
+          <small>${esc(s.mascotaDeseada)}</small>
+          <p>${esc(s.motivo)}</p>
+          <div class="acciones">
+            <select onchange="estado('${s.id}',this.value)">
+              ${['pendiente','aceptada','rechazada'].map(e=>`<option ${e===s.estado?'selected':''}>${e}</option>`).join('')}
+            </select>
+            <button onclick="abrirEditar('${s.id}','${esc(s.mascotaDeseada)}',\`${esc(s.motivo)}\`)">Editar</button>
+            <button class="peligro" onclick="eliminar('${s.id}')">Eliminar</button>
+          </div>
+        </div>`);
+    });
+  }
+
+  // ── Crear ──────────────────────────────────
+  async function crear() {
+    const body = {
+      nombrePersona: document.getElementById('inp-nombre').value.trim(),
+      mascotaDeseada: document.getElementById('inp-mascota').value.trim(),
+      motivo: document.getElementById('inp-motivo').value.trim(),
+    };
+    if (!body.nombrePersona || !body.mascotaDeseada || !body.motivo) { toast('Completa todos los campos.'); return; }
+    await fetch(`${API}/solicitudes`, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body) });
+    document.getElementById('inp-nombre').value = '';
+    document.getElementById('inp-mascota').value = '';
+    document.getElementById('inp-motivo').value = '';
+    toast('Solicitud creada.');
+    cargar();
+  }
+
+  // ── Cambiar estado ─────────────────────────
+  async function estado(id, estado) {
+    await fetch(`${API}/solicitudes/${id}/estado`, { method:'PATCH', headers:{'Content-Type':'application/json'}, body:JSON.stringify({estado}) });
+    toast('Estado actualizado.');
+    fetchLista(document.getElementById('inp-buscar').value.trim());
+  }
+
+  // ── Editar ─────────────────────────────────
+  function abrirEditar(id, mascota, motivo) {
+    editandoId = id;
+    document.getElementById('edit-mascota').value = mascota;
+    document.getElementById('edit-motivo').value  = motivo;
+    document.getElementById('dlg-editar').showModal();
+  }
+
+  async function guardar() {
+    const body = {
+      mascotaDeseada: document.getElementById('edit-mascota').value.trim(),
+      motivo: document.getElementById('edit-motivo').value.trim(),
+    };
+    await fetch(`${API}/solicitudes/${editandoId}`, { method:'PATCH', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body) });
+    document.getElementById('dlg-editar').close();
+    toast('Solicitud actualizada.');
+    fetchLista(document.getElementById('inp-buscar').value.trim());
+  }
+
+  // ── Eliminar ───────────────────────────────
+  async function eliminar(id) {
+    if (!confirm('¿Eliminar esta solicitud?')) return;
+    await fetch(`${API}/solicitudes/${id}`, { method:'DELETE' });
+    toast('Solicitud eliminada.');
+    fetchLista(document.getElementById('inp-buscar').value.trim());
+  }
+
+  // ── Helper ─────────────────────────────────
+  function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/`/g,'&#96;'); }
+
+  cargar();
+</script>
+</body>
+</html>
