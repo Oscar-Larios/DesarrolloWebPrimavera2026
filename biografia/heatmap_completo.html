@@ -17,7 +17,7 @@ header h1{font-size:15px;font-weight:600}
 .mode-tab:hover{color:#ccc}
 .mode-tab.active{color:white;border-bottom-color:#60A5FA}
 .layout{display:flex;flex:1;overflow:hidden}
-.sidebar{width:300px;flex-shrink:0;background:white;border-right:1px solid #e0e0e0;overflow-y:auto;display:flex;flex-direction:column}
+.sidebar{width:320px;flex-shrink:0;background:white;border-right:1px solid #e0e0e0;overflow-y:auto;display:flex;flex-direction:column}
 .panel{border-bottom:1px solid #eee;padding:13px 16px}
 .panel h3{font-size:10px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.6px;margin-bottom:9px}
 .cob-tabs{display:flex;flex-wrap:wrap;gap:5px}
@@ -27,7 +27,7 @@ header h1{font-size:15px;font-weight:600}
 .check-group{display:flex;flex-direction:column;gap:4px}
 .check-item{display:flex;align-items:flex-start;gap:8px;padding:3px 5px;border-radius:5px;cursor:pointer}
 .check-item:hover{background:#f5f7ff}
-.check-item input{width:13px;height:13px;margin-top:2px;flex-shrink:0;cursor:pointer;accent-color:#EA580C}
+.check-item input[type=checkbox]{width:13px;height:13px;margin-top:2px;flex-shrink:0;cursor:pointer;accent-color:#EA580C}
 .check-item label{font-size:12px;color:#333;cursor:pointer;line-height:1.35}
 .sel-all{font-size:11px;color:#EA580C;cursor:pointer;margin-bottom:7px;display:inline-block;text-decoration:underline}
 .meses-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px}
@@ -43,7 +43,7 @@ header h1{font-size:15px;font-weight:600}
 .legend-sep{margin:7px 0;border-top:1px solid #eee}
 .legend-item{display:flex;align-items:center;gap:6px;font-size:10px;color:#555;margin-top:4px}
 .legend-swatch{width:18px;height:10px;border-radius:2px;flex-shrink:0}
-.info-box{background:white;padding:9px 13px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.12);min-width:180px;max-width:250px}
+.info-box{background:white;padding:9px 13px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.12);min-width:180px;max-width:260px}
 .info-box b{display:block;font-size:12px;color:#1a1a2e;margin-bottom:4px}
 .info-box .val{font-weight:700;font-size:14px}
 .info-box .val-row{display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:2px 0;border-bottom:1px solid #f0f0f0}
@@ -52,11 +52,37 @@ header h1{font-size:15px;font-weight:600}
 .info-box small{color:#999;font-size:10px}
 .val-blue{color:#2563EB}
 .val-orange{color:#EA580C}
+.val-green{color:#16a34a}
+.val-red{color:#dc2626}
 .sec-factores,.sec-incidencia{display:none}
 .toggle-cp-row{display:flex;align-items:center;gap:8px;padding:10px 16px;border-bottom:1px solid #eee;background:#f8faff}
 .toggle-cp-row label{font-size:12px;color:#333;cursor:pointer}
 .toggle-cp-row input{accent-color:#2563EB;width:14px;height:14px;cursor:pointer}
 .fuente{font-size:10px;color:#aaa;padding:8px 16px;border-top:1px solid #eee;margin-top:auto}
+.sim-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px}
+.sim-header h3{font-size:10px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.6px;margin:0}
+.sim-cols{display:grid;grid-template-columns:80px 1fr 1fr;gap:4px;margin-bottom:6px}
+.sim-col-label{font-size:10px;color:#aaa;font-weight:600;padding:0 2px}
+.sim-row{display:grid;grid-template-columns:80px 1fr 1fr;gap:4px;align-items:center;margin-bottom:4px}
+.sim-cp-badge{font-size:11px;font-weight:600;color:#1a1a2e;background:#f1f5f9;border-radius:4px;padding:3px 6px;text-align:center}
+.sim-input{width:100%;font-size:12px;padding:4px 6px;border:1px solid #ddd;border-radius:5px;outline:none;transition:border .15s}
+.sim-input:focus{border-color:#2563EB}
+.sim-input.invalid{border-color:#dc2626;background:#fff5f5}
+.sim-add-row{display:flex;gap:6px;margin-bottom:8px}
+.sim-add-input{flex:1;font-size:12px;padding:5px 8px;border:1px solid #ddd;border-radius:5px;outline:none}
+.sim-add-input:focus{border-color:#2563EB}
+.btn{font-size:12px;padding:5px 10px;border-radius:5px;cursor:pointer;border:none;font-weight:500;transition:all .15s;display:inline-flex;align-items:center;justify-content:center;gap:4px}
+.btn-primary{background:#2563EB;color:white}
+.btn-primary:hover{background:#1d4ed8}
+.btn-warning{background:#f59e0b;color:white}
+.btn-warning:hover{background:#d97706}
+.btn-secondary{background:#f1f5f9;color:#334155;border:1px solid #ddd}
+.btn-secondary:hover{background:#e2e8f0}
+.sim-actions{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.sim-actions .btn{flex:1;min-width:60px;text-align:center}
+.sim-empty{font-size:12px;color:#aaa;text-align:center;padding:8px 0}
+.sim-active-badge{display:inline-block;font-size:10px;background:#fef3c7;color:#92400e;border-radius:10px;padding:1px 7px;margin-left:6px;font-weight:600}
+.sim-hint{font-size:10px;color:#aaa;margin-bottom:6px}
 </style>
 </head>
 <body>
@@ -70,8 +96,6 @@ header h1{font-size:15px;font-weight:600}
 </div>
 <div class="layout">
   <div class="sidebar">
-
-    <!-- FACTORES -->
     <div class="sec-factores">
       <div class="panel">
         <h3>Cobertura</h3>
@@ -85,9 +109,32 @@ header h1{font-size:15px;font-weight:600}
         <div class="stat"><div class="stat-val" id="f-min">—</div><div class="stat-lab">Mínimo</div></div>
         <div class="stat"><div class="stat-val" id="f-max">—</div><div class="stat-lab">Máximo</div></div>
       </div>
+      <div class="panel" id="sim-panel">
+        <div class="sim-header">
+          <h3>Simulador por CP <span class="sim-active-badge" id="sim-badge" style="display:none">activo</span></h3>
+        </div>
+        <div class="sim-hint">Puedes escribir uno o varios CPs separados por coma</div>
+        <div class="sim-add-row">
+          <input class="sim-add-input" id="sim-cp-input" type="text"
+                 placeholder="ej. 54080,53140,52948"
+                 onkeydown="if(event.key==='Enter') agregarCp()">
+          <button class="btn btn-primary" onclick="agregarCp()">+</button>
+        </div>
+        <div id="sim-col-labels" class="sim-cols" style="display:none">
+          <span class="sim-col-label">CP</span>
+          <span class="sim-col-label">Factor objetivo</span>
+          <span class="sim-col-label">Cambio %</span>
+        </div>
+        <div id="sim-rows"></div>
+        <div id="sim-empty" class="sim-empty">Agrega CPs para simular cambios de factor</div>
+        <div class="sim-actions" id="sim-actions" style="display:none">
+          <button class="btn btn-primary"   onclick="aplicarSimulacion()">Aplicar</button>
+          <button class="btn btn-warning"   id="btn-quitar-sim" style="display:none" onclick="quitarSimulacion()">Quitar</button>
+          <button class="btn btn-secondary" onclick="limpiarSimulacion()">Limpiar</button>
+          <button class="btn btn-secondary" onclick="exportarCSV()">CSV</button>
+        </div>
+      </div>
     </div>
-
-    <!-- INCIDENCIA -->
     <div class="sec-incidencia">
       <div class="stats">
         <div class="stat"><div class="stat-val" id="i-total">—</div><div class="stat-lab">Total delitos</div></div>
@@ -109,7 +156,6 @@ header h1{font-size:15px;font-weight:600}
       </div>
       <div class="fuente">Fuente: Secretariado Ejecutivo del SNSP<br>Datos: 2025 | Actualización: 20 mar 2026</div>
     </div>
-
   </div>
   <div id="map"></div>
 </div>
@@ -124,9 +170,10 @@ const MESES      = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Juli
 const SUBTIPOS   = ["Robo de autopartes", "Robo de veh\u00edculo automotor"];
 const MODALIDADES= ["Con violencia", "Robo de coche de 4 ruedas Con violencia", "Robo de coche de 4 ruedas Sin violencia", "Robo de embarcaciones peque\u00f1as y grandes Con violencia", "Robo de embarcaciones peque\u00f1as y grandes Sin violencia", "Robo de motocicleta Con violencia", "Robo de motocicleta Sin violencia", "Sin violencia"];
 const LABELS_MOD = {"Con violencia": "Autopartes \u2014 Con violencia", "Sin violencia": "Autopartes \u2014 Sin violencia", "Robo de coche de 4 ruedas Con violencia": "Coche \u2014 Con violencia", "Robo de coche de 4 ruedas Sin violencia": "Coche \u2014 Sin violencia", "Robo de motocicleta Con violencia": "Motocicleta \u2014 Con violencia", "Robo de motocicleta Sin violencia": "Motocicleta \u2014 Sin violencia", "Robo de embarcaciones peque\u00f1as y grandes Con violencia": "Embarcaci\u00f3n \u2014 Con violencia", "Robo de embarcaciones peque\u00f1as y grandes Sin violencia": "Embarcaci\u00f3n \u2014 Sin violencia"};
-const CVEGEO_ROJO= new Set(["15037", "15013", "15104", "15057"]);
+const CVEGEO_ROJO= new Set(["15037", "15013", "15057", "15104"]);
 const COBERTURAS = Object.keys(FACTORES);
 const CP_ZONA_A  = {"54080": "15104", "54060": "15104", "54020": "15104", "54030": "15104", "54050": "15104", "54070": "15104", "54054": "15104", "54147": "15104", "54069": "15104", "54026": "15104", "54145": "15104", "53140": "15057", "53100": "15057", "53120": "15057", "53910": "15057", "53230": "15057", "52948": "15013", "52947": "15013", "52900": "15013", "52950": "15013", "52976": "15013", "52787": "15037", "52788": "15037", "52784": "15037", "52785": "15037", "52780": "15037", "52786": "15037"};
+const CP_FACTORES_ACTUALES = {"54080": {"DM Total": 0.9785, "DM Parcial": 0.9785, "DM Cristales": 0.9785, "GMO": 0.993, "Robo": 0.7789, "TPL": 0.9173}, "54060": {"DM Total": 0.9785, "DM Parcial": 0.9785, "DM Cristales": 0.9785, "GMO": 0.993, "Robo": 0.7789, "TPL": 0.9173}, "54020": {"DM Total": 0.9785, "DM Parcial": 0.9785, "DM Cristales": 0.9785, "GMO": 0.993, "Robo": 0.7789, "TPL": 0.9173}, "54030": {"DM Total": 0.9785, "DM Parcial": 0.9785, "DM Cristales": 0.9785, "GMO": 0.993, "Robo": 0.7789, "TPL": 0.9173}, "54050": {"DM Total": 0.9785, "DM Parcial": 0.9785, "DM Cristales": 0.9785, "GMO": 0.993, "Robo": 0.7789, "TPL": 0.9173}, "54070": {"DM Total": 0.9785, "DM Parcial": 0.9785, "DM Cristales": 0.9785, "GMO": 0.993, "Robo": 0.7789, "TPL": 0.9173}, "54054": {"DM Total": 0.9785, "DM Parcial": 0.9785, "DM Cristales": 0.9785, "GMO": 0.993, "Robo": 0.7789, "TPL": 0.9173}, "54147": {"DM Total": 0.9785, "DM Parcial": 0.9785, "DM Cristales": 0.9785, "GMO": 0.993, "Robo": 0.7789, "TPL": 0.9173}, "54069": {"DM Total": 0.9785, "DM Parcial": 0.9785, "DM Cristales": 0.9785, "GMO": 0.993, "Robo": 0.7789, "TPL": 0.9173}, "54026": {"DM Total": 0.9785, "DM Parcial": 0.9785, "DM Cristales": 0.9785, "GMO": 0.993, "Robo": 0.7789, "TPL": 0.9173}, "54145": {"DM Total": 0.9785, "DM Parcial": 0.9785, "DM Cristales": 0.9785, "GMO": 0.993, "Robo": 0.7789, "TPL": 0.9173}, "53140": {"DM Total": 0.9785, "DM Parcial": 0.9785, "DM Cristales": 0.9785, "GMO": 0.993, "Robo": 0.7789, "TPL": 0.9173}, "53100": {"DM Total": 0.9785, "DM Parcial": 0.9785, "DM Cristales": 0.9785, "GMO": 0.993, "Robo": 0.7789, "TPL": 0.9173}, "53120": {"DM Total": 0.9785, "DM Parcial": 0.9785, "DM Cristales": 0.9785, "GMO": 0.993, "Robo": 0.7789, "TPL": 0.9173}, "53910": {"DM Total": 0.9785, "DM Parcial": 0.9785, "DM Cristales": 0.9785, "GMO": 0.993, "Robo": 0.7789, "TPL": 0.9173}, "53230": {"DM Total": 0.9785, "DM Parcial": 0.9785, "DM Cristales": 0.9785, "GMO": 0.993, "Robo": 0.7789, "TPL": 0.9173}, "52948": {"DM Total": 0.9785, "DM Parcial": 0.9785, "DM Cristales": 0.9785, "GMO": 0.993, "Robo": 0.7789, "TPL": 0.9173}, "52947": {"DM Total": 0.9785, "DM Parcial": 0.9785, "DM Cristales": 0.9785, "GMO": 0.993, "Robo": 0.7789, "TPL": 0.9173}, "52900": {"DM Total": 0.9785, "DM Parcial": 0.9785, "DM Cristales": 0.9785, "GMO": 0.993, "Robo": 0.7789, "TPL": 0.9173}, "52950": {"DM Total": 0.9785, "DM Parcial": 0.9785, "DM Cristales": 0.9785, "GMO": 0.993, "Robo": 0.7789, "TPL": 0.9173}, "52976": {"DM Total": 0.9785, "DM Parcial": 0.9785, "DM Cristales": 0.9785, "GMO": 0.993, "Robo": 0.7789, "TPL": 0.9173}, "52787": {"DM Total": 1.2517, "DM Parcial": 1.2517, "DM Cristales": 1.2517, "GMO": 0.7712, "Robo": 1.8509, "TPL": 0.9404}, "52788": {"DM Total": 1.2517, "DM Parcial": 1.2517, "DM Cristales": 1.2517, "GMO": 0.7712, "Robo": 1.8509, "TPL": 0.9404}, "52784": {"DM Total": 1.2517, "DM Parcial": 1.2517, "DM Cristales": 1.2517, "GMO": 0.7712, "Robo": 1.8509, "TPL": 0.9404}, "52785": {"DM Total": 1.2517, "DM Parcial": 1.2517, "DM Cristales": 1.2517, "GMO": 0.7712, "Robo": 1.8509, "TPL": 0.9404}, "52780": {"DM Total": 1.2517, "DM Parcial": 1.2517, "DM Cristales": 1.2517, "GMO": 0.7712, "Robo": 1.8509, "TPL": 0.9404}, "52786": {"DM Total": 1.2517, "DM Parcial": 1.2517, "DM Cristales": 1.2517, "GMO": 0.7712, "Robo": 1.8509, "TPL": 0.9404}, "54043": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "52763": {"DM Total": 1.1122, "DM Parcial": 1.1122, "DM Cristales": 1.1122, "GMO": 1.1287, "Robo": 0.8853, "TPL": 1.0426}, "53695": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53710": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "52799": {"DM Total": 1.1122, "DM Parcial": 1.1122, "DM Cristales": 1.1122, "GMO": 1.1287, "Robo": 0.8853, "TPL": 1.0426}, "52798": {"DM Total": 1.1122, "DM Parcial": 1.1122, "DM Cristales": 1.1122, "GMO": 1.1287, "Robo": 0.8853, "TPL": 1.0426}, "53698": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53218": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "52770": {"DM Total": 1.1122, "DM Parcial": 1.1122, "DM Cristales": 1.1122, "GMO": 1.1287, "Robo": 0.8853, "TPL": 1.0426}, "52779": {"DM Total": 1.1122, "DM Parcial": 1.1122, "DM Cristales": 1.1122, "GMO": 1.1287, "Robo": 0.8853, "TPL": 1.0426}, "52778": {"DM Total": 1.1122, "DM Parcial": 1.1122, "DM Cristales": 1.1122, "GMO": 1.1287, "Robo": 0.8853, "TPL": 1.0426}, "52765": {"DM Total": 1.1122, "DM Parcial": 1.1122, "DM Cristales": 1.1122, "GMO": 1.1287, "Robo": 0.8853, "TPL": 1.0426}, "53309": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "52919": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "52960": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "52975": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "53658": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53650": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "54059": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "52995": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "52923": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "53115": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53117": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53160": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53170": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53177": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53178": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53200": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53237": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53239": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53150": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53247": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53250": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53240": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53280": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53296": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53310": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53338": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53420": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53430": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53489": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53490": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53700": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53708": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53696": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53718": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53697": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53227": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53717": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53790": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53800": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53830": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "54016": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54023": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54110": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54130": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54158": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54162": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54168": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54187": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54180": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "52783": {"DM Total": 1.1122, "DM Parcial": 1.1122, "DM Cristales": 1.1122, "GMO": 1.1287, "Robo": 0.8853, "TPL": 1.0426}, "52777": {"DM Total": 1.1122, "DM Parcial": 1.1122, "DM Cristales": 1.1122, "GMO": 1.1287, "Robo": 0.8853, "TPL": 1.0426}, "53307": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "52985": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "52764": {"DM Total": 1.1122, "DM Parcial": 1.1122, "DM Cristales": 1.1122, "GMO": 1.1287, "Robo": 0.8853, "TPL": 1.0426}, "52989": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "52977": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "52980": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "52997": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "53820": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53780": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53819": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53810": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53787": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53580": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "54028": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54025": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "53694": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "52795": {"DM Total": 1.1122, "DM Parcial": 1.1122, "DM Cristales": 1.1122, "GMO": 1.1287, "Robo": 0.8853, "TPL": 1.0426}, "52987": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "52776": {"DM Total": 1.1122, "DM Parcial": 1.1122, "DM Cristales": 1.1122, "GMO": 1.1287, "Robo": 0.8853, "TPL": 1.0426}, "52937": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "53404": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "52920": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "54093": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "53297": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "54124": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "53040": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53300": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "52918": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "52946": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "53030": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "52934": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "52949": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "53403": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "52924": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "52986": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "52965": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "52996": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "53010": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "52998": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "53050": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53458": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53060": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53119": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53128": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53130": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53138": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53248": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53270": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53278": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53279": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53283": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53290": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53298": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53730": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53760": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53330": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53339": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53716": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "52774": {"DM Total": 1.1122, "DM Parcial": 1.1122, "DM Cristales": 1.1122, "GMO": 1.1287, "Robo": 0.8853, "TPL": 1.0426}, "52793": {"DM Total": 1.1122, "DM Parcial": 1.1122, "DM Cristales": 1.1122, "GMO": 1.1287, "Robo": 0.8853, "TPL": 1.0426}, "53410": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53425": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53533": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53440": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53450": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53470": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53459": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53460": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53550": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53426": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53560": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53519": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53529": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53520": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53530": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53569": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53640": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53660": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53687": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53570": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53598": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53688": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53689": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53713": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "52928": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "53770": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53215": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53719": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53260": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53799": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53129": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53788": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53809": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53798": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53839": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53909": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53940": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53970": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53900": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53930": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "52929": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "54000": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54009": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "53950": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "54017": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54021": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54022": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54010": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "53840": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "54160": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "53960": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "54037": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54038": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54040": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54049": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54057": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54063": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54067": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54068": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54073": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54076": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54092": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54094": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54098": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54108": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54109": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54090": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54118": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54119": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54126": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "52957": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "53217": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53216": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53427": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "54127": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54128": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54134": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "53370": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53350": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "54135": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54136": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54143": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54146": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54149": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "52940": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "54152": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54196": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54170": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54150": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "52979": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "53664": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53690": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "54120": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "53670": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53228": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53126": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53219": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53229": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53659": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53116": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53127": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "52927": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "53329": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53390": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53428": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "54024": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54015": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54140": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54195": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "52769": {"DM Total": 1.1122, "DM Parcial": 1.1122, "DM Cristales": 1.1122, "GMO": 1.1287, "Robo": 0.8853, "TPL": 1.0426}, "54197": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "53400": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "54033": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "52915": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "53110": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "52930": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "52916": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "52938": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "52968": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "52910": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "52936": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "53320": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "54173": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "53348": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "52789": {"DM Total": 1.1122, "DM Parcial": 1.1122, "DM Cristales": 1.1122, "GMO": 1.1287, "Robo": 0.8853, "TPL": 1.0426}, "52775": {"DM Total": 1.1122, "DM Parcial": 1.1122, "DM Cristales": 1.1122, "GMO": 1.1287, "Robo": 0.8853, "TPL": 1.0426}, "53398": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "52926": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "52988": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "52970": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "54142": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54172": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "52978": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "52967": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "52953": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "52945": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "52959": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "52925": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "52797": {"DM Total": 1.1122, "DM Parcial": 1.1122, "DM Cristales": 1.1122, "GMO": 1.1287, "Robo": 0.8853, "TPL": 1.0426}, "52990": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "52767": {"DM Total": 1.1122, "DM Parcial": 1.1122, "DM Cristales": 1.1122, "GMO": 1.1287, "Robo": 0.8853, "TPL": 1.0426}, "52768": {"DM Total": 1.1122, "DM Parcial": 1.1122, "DM Cristales": 1.1122, "GMO": 1.1287, "Robo": 0.8853, "TPL": 1.0426}, "52760": {"DM Total": 1.1122, "DM Parcial": 1.1122, "DM Cristales": 1.1122, "GMO": 1.1287, "Robo": 0.8853, "TPL": 1.0426}, "52994": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "52790": {"DM Total": 1.1122, "DM Parcial": 1.1122, "DM Cristales": 1.1122, "GMO": 1.1287, "Robo": 0.8853, "TPL": 1.0426}, "52773": {"DM Total": 1.1122, "DM Parcial": 1.1122, "DM Cristales": 1.1122, "GMO": 1.1287, "Robo": 0.8853, "TPL": 1.0426}, "52796": {"DM Total": 1.1122, "DM Parcial": 1.1122, "DM Cristales": 1.1122, "GMO": 1.1287, "Robo": 0.8853, "TPL": 1.0426}, "52794": {"DM Total": 1.1122, "DM Parcial": 1.1122, "DM Cristales": 1.1122, "GMO": 1.1287, "Robo": 0.8853, "TPL": 1.0426}, "52766": {"DM Total": 1.1122, "DM Parcial": 1.1122, "DM Cristales": 1.1122, "GMO": 1.1287, "Robo": 0.8853, "TPL": 1.0426}, "54198": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "53680": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53124": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53125": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53070": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53000": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53500": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53340": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "54075": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54100": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "53378": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53714": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "52966": {"DM Total": 2.1011, "DM Parcial": 2.1011, "DM Cristales": 2.1011, "GMO": 1.0557, "Robo": 2.6799, "TPL": 1.0557}, "53224": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "53220": {"DM Total": 1.6123, "DM Parcial": 1.6123, "DM Cristales": 1.6123, "GMO": 1.1126, "Robo": 1.9168, "TPL": 1.1968}, "54055": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54189": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54193": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}, "54190": {"DM Total": 1.7325, "DM Parcial": 1.7325, "DM Cristales": 1.7325, "GMO": 1.0675, "Robo": 2.5618, "TPL": 1.3016}};
 
 const CVEGEO_NOMBRE = {
   "15013":"Atizapán de Zaragoza",
@@ -141,6 +188,8 @@ const PAL_ORANGE = ["#FFF7ED","#FED7AA","#FB923C","#EA580C","#7C2D12"];
 let currentMode = 'factores';
 let currentCob  = COBERTURAS[0];
 let showCp      = true;
+let simActiva   = false;
+const simCps    = {};
 const filtros   = {
   meses:     new Set(MESES),
   subtipos:  new Set(SUBTIPOS),
@@ -152,152 +201,158 @@ function extraerNum(v){
   if(typeof v==='object') return v.valor_base??v.valor_a??NaN;
   return v;
 }
-
-function getValCp(cp, cvegeo, esA, datos){
+function getValCp(cp,cvegeo,esA,datos){
   const raw=datos[cvegeo];
-  if(esA) return (typeof raw==='object') ? (raw.valor_a??raw.valor_base??NaN) : extraerNum(raw);
+  if(esA) return (typeof raw==='object')?(raw.valor_a??raw.valor_base??NaN):extraerNum(raw);
   return extraerNum(raw);
 }
-
-function tooltipMun(nom, v){
-  if(v===null||v===undefined) return `<b>${nom}</b><small>Sin dato</small>`;
-  if(typeof v==='object'){
-    const base=v.valor_base!==undefined?`<div class="val-row"><span class="val-label">Base</span><span class="val val-blue">${v.valor_base.toFixed(4)}</span></div>`:'';
-    const zona=v.valor_a!==undefined?`<div class="val-row"><span class="val-label">Zona "A"</span><span class="val val-blue">${v.valor_a.toFixed(4)}</span></div>`:'';
-    return `<b>${nom}</b>${base}${zona}`;
-  }
-  return `<b>${nom}</b><span class="val val-blue">${v.toFixed(4)}</span>`;
+function factorActualCp(cp){
+  const v=CP_FACTORES_ACTUALES[cp]?.[currentCob];
+  return (v!==null&&v!==undefined)?v:NaN;
+}
+function palIdx(val,vmin,vmax){
+  return PAL_BLUE[Math.floor(Math.min(0.9999,(val-vmin)/(vmax-vmin))*5)];
 }
 
-function tooltipCp(cp, cvegeo, esA, val){
-  const tipo   = esA ? 'Factor "A"' : 'Factor base';
-  const valStr = !isNaN(val) ? val.toFixed(4) : 'Sin dato';
-  const mun    = CVEGEO_NOMBRE[cvegeo] || '';
-  return `<b>${mun} — CP ${cp}</b>
-    <div class="val-row"><span class="val-label">${tipo}</span>
-    <span class="val val-blue">${valStr}</span></div>`;
+function tooltipMun(nom,v){
+  if(v===null||v===undefined) return '<b>'+nom+'</b><small>Sin dato</small>';
+  if(typeof v==='object'){
+    const base=v.valor_base!==undefined?'<div class="val-row"><span class="val-label">Base</span><span class="val val-blue">'+v.valor_base.toFixed(4)+'</span></div>':'';
+    const zona=v.valor_a!==undefined?'<div class="val-row"><span class="val-label">Zona "A"</span><span class="val val-blue">'+v.valor_a.toFixed(4)+'</span></div>':'';
+    return '<b>'+nom+'</b>'+base+zona;
+  }
+  return '<b>'+nom+'</b><span class="val val-blue">'+v.toFixed(4)+'</span>';
+}
+function tooltipCp(cp,cvegeo,esA,valActual){
+  const tipo   = esA?'Factor "A"':'Factor base';
+  const valStr = !isNaN(valActual)?valActual.toFixed(4):'Sin dato';
+  const mun    = CVEGEO_NOMBRE[cvegeo]||'';
+  let simStr   = '';
+  if(simActiva&&simCps[cp]!==undefined){
+    const obj=simCps[cp];
+    const pct=!isNaN(valActual)?((obj-valActual)/valActual*100).toFixed(1):'—';
+    const cls=obj>valActual?'val-green':obj<valActual?'val-red':'';
+    simStr='<div class="val-row"><span class="val-label">Simulado</span>'+
+           '<span class="val '+cls+'">'+obj.toFixed(4)+' ('+pct+'%)</span></div>';
+  }
+  return '<b>'+mun+' — CP '+cp+'</b>'+
+    '<div class="val-row"><span class="val-label">'+tipo+'</span>'+
+    '<span class="val val-blue">'+valStr+'</span></div>'+simStr;
 }
 
 // ── Mapa ──────────────────────────────────────────────────────────────────────
-const map = L.map('map').setView([19.4,-99.3],9);
+const map=L.map('map').setView([19.4,-99.3],9);
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{
   attribution:'© OpenStreetMap © CARTO',maxZoom:19
 }).addTo(map);
 
-const infoBox = L.control({position:'topright'});
-infoBox.onAdd = function(){
-  this._div=L.DomUtil.create('div','info-box'); this.clear(); return this._div;
-};
-infoBox.clear = function(){ this._div.innerHTML='<small>Pasa el mouse sobre un municipio o CP</small>'; };
-infoBox.setHTML = function(h){ this._div.innerHTML=h; };
+const infoBox=L.control({position:'topright'});
+infoBox.onAdd=function(){this._div=L.DomUtil.create('div','info-box');this.clear();return this._div;};
+infoBox.clear=function(){this._div.innerHTML='<small>Pasa el mouse sobre un municipio o CP</small>';};
+infoBox.setHTML=function(h){this._div.innerHTML=h;};
 infoBox.addTo(map);
 
-const legend = L.control({position:'bottomright'});
-legend.onAdd = function(){
+const legend=L.control({position:'bottomright'});
+legend.onAdd=function(){
   const d=L.DomUtil.create('div','legend');
-  d.innerHTML=`<h4 id="lg-title">—</h4>
-    <div class="legend-bar" id="lg-bar"></div>
-    <div class="legend-labels"><span id="lg-min">—</span><span id="lg-max">—</span></div>
-    <div class="legend-sep"></div>
-    <div class="legend-item">
-      <span class="legend-swatch" style="background:white;border:2px solid #cc0000"></span>Municipio zona "A"
-    </div>
-    <div id="lg-cp-items">
-      <div class="legend-item">
-        <span class="legend-swatch" style="background:white;border:1.5px solid #cc0000"></span>CP — Factor "A"
-      </div>
-      <div class="legend-item">
-        <span class="legend-swatch" style="background:white;border:1.5px solid #1e3a8a"></span>CP — Factor base
-      </div>
-    </div>`;
+  d.innerHTML=
+    '<h4 id="lg-title">—</h4>'+
+    '<div class="legend-bar" id="lg-bar"></div>'+
+    '<div class="legend-labels"><span id="lg-min">—</span><span id="lg-max">—</span></div>'+
+    '<div class="legend-sep"></div>'+
+    '<div class="legend-item"><span class="legend-swatch" style="background:white;border:2px solid #cc0000"></span>Municipio zona "A"</div>'+
+    '<div id="lg-cp-items">'+
+      '<div class="legend-item"><span class="legend-swatch" style="background:white;border:1.5px solid #cc0000"></span>CP — Factor "A"</div>'+
+      '<div class="legend-item"><span class="legend-swatch" style="background:white;border:1.5px solid #1e3a8a"></span>CP — Factor base</div>'+
+    '</div>'+
+    '<div id="lg-sim-item" style="display:none">'+
+      '<div class="legend-item"><span class="legend-swatch" style="background:#60A5FA;border:2.5px solid #ca8a04"></span>CP simulado</div>'+
+    '</div>';
   return d;
 };
 legend.addTo(map);
 
-function setLegend(title,vmin,vmax,pal,cpVisible){
+function setLegend(title,vmin,vmax,pal,cpVisible,simVisible){
   document.getElementById('lg-title').textContent=title;
-  document.getElementById('lg-bar').style.background=`linear-gradient(to right,${pal[0]},${pal[2]},${pal[4]})`;
+  document.getElementById('lg-bar').style.background='linear-gradient(to right,'+pal[0]+','+pal[2]+','+pal[4]+')';
   document.getElementById('lg-min').textContent=typeof vmin==='number'?(Number.isInteger(vmin)?vmin:vmin.toFixed(4)):vmin;
   document.getElementById('lg-max').textContent=typeof vmax==='number'?(Number.isInteger(vmax)?vmax:vmax.toFixed(4)):vmax;
   const cpItems=document.getElementById('lg-cp-items');
+  const simItem=document.getElementById('lg-sim-item');
   if(cpItems) cpItems.style.display=cpVisible?'block':'none';
+  if(simItem) simItem.style.display=simVisible?'block':'none';
 }
 
-let layerC=null, layerE=null, layerCP=null;
-
-function buildLayers(getColorMun, getHTMLMun, getColorCp, getHTMLCp, cpVisible){
-  if(layerCP){ map.removeLayer(layerCP); layerCP=null; }
-  if(layerE)  map.removeLayer(layerE);
-  if(layerC)  map.removeLayer(layerC);
-
+let layerC=null,layerE=null,layerCP=null;
+function buildLayers(getColorMun,getHTMLMun,getCpStyle,getHTMLCp,cpVisible){
+  if(layerCP){map.removeLayer(layerCP);layerCP=null;}
+  if(layerE) map.removeLayer(layerE);
+  if(layerC) map.removeLayer(layerC);
   function styleMun(f,cdmx){
-    const cv=f.properties.CVEGEO, rojo=CVEGEO_ROJO.has(cv);
+    const cv=f.properties.CVEGEO,rojo=CVEGEO_ROJO.has(cv);
     return{fillColor:getColorMun(cv),fillOpacity:0.85,
-      color:rojo?'#cc0000':(cdmx?'#333':'#777'),
-      weight:rojo?2.5:(cdmx?1.5:0.4)};
+      color:rojo?'#cc0000':(cdmx?'#333':'#777'),weight:rojo?2.5:(cdmx?1.5:0.4)};
   }
   function onEachMun(f,layer){
-    const cv=f.properties.CVEGEO, nom=f.properties.NOMGEO;
-    layer.on({mouseover(){infoBox.setHTML(getHTMLMun(cv,nom))},mouseout(){infoBox.clear()}});
+    const cv=f.properties.CVEGEO,nom=f.properties.NOMGEO;
+    layer.on({mouseover(){infoBox.setHTML(getHTMLMun(cv,nom));},mouseout(){infoBox.clear();}});
   }
   layerE=L.geoJSON(EDOMEX_GJ,{style:f=>styleMun(f,false),onEachFeature:onEachMun}).addTo(map);
   layerC=L.geoJSON(CDMX_GJ,  {style:f=>styleMun(f,true), onEachFeature:onEachMun}).addTo(map);
-
-  if(cpVisible && getColorCp){
+  if(cpVisible&&getCpStyle){
     layerCP=L.geoJSON(CP_GJ,{
-      style(f){
-        const esA=f.properties.es_a;
-        return{fillColor:getColorCp(f.properties.cp,f.properties.cvegeo,esA),
-          fillOpacity:0.85, color:esA?'#cc0000':'#1e3a8a', weight:0.6};
-      },
+      style(f){return getCpStyle(f.properties.cp,f.properties.cvegeo,f.properties.es_a);},
       onEachFeature(f,layer){
         const {cp,cvegeo,es_a}=f.properties;
-        layer.on({mouseover(){infoBox.setHTML(getHTMLCp(cp,cvegeo,es_a))},mouseout(){infoBox.clear()}});
+        layer.on({mouseover(){infoBox.setHTML(getHTMLCp(cp,cvegeo,es_a));},mouseout(){infoBox.clear();}});
       }
     }).addTo(map);
   }
 }
 
-function toggleCp(checked){
-  showCp=checked;
-  if(currentMode==='factores') updateFactores();
-}
+function toggleCp(checked){showCp=checked;if(currentMode==='factores')updateFactores();}
 
-// ── Modo Factores ─────────────────────────────────────────────────────────────
 function updateFactores(){
   const datos=FACTORES[currentCob];
   const nums=Object.values(datos).map(v=>extraerNum(v)).filter(v=>!isNaN(v));
-  const vmin=Math.min(...nums), vmax=Math.max(...nums);
+  const vmin=Math.min(...nums),vmax=Math.max(...nums);
   document.getElementById('f-min').textContent=vmin.toFixed(4);
   document.getElementById('f-max').textContent=vmax.toFixed(4);
-  document.getElementById('hdr-resumen').textContent=`${currentCob} · ${vmin.toFixed(4)} – ${vmax.toFixed(4)}`;
-  setLegend('Nuevo Factor',vmin,vmax,PAL_BLUE,showCp);
+  document.getElementById('hdr-resumen').textContent=
+    currentCob+' · '+vmin.toFixed(4)+' – '+vmax.toFixed(4)+(simActiva?' · Simulación activa':'');
+  setLegend('Nuevo Factor',vmin,vmax,PAL_BLUE,showCp,simActiva&&Object.keys(simCps).length>0);
 
   const getColorMun=cv=>{
-    const n=extraerNum(datos[cv]); if(isNaN(n)) return '#eeeeee';
-    return PAL_BLUE[Math.floor(Math.min(0.9999,(n-vmin)/(vmax-vmin))*5)];
+    const n=extraerNum(datos[cv]);if(isNaN(n))return'#eeeeee';
+    return palIdx(n,vmin,vmax);
   };
-  const getColorCp=(cp,cvegeo,esA)=>{
-    const val=getValCp(cp,cvegeo,esA,datos); if(isNaN(val)) return '#eeeeee';
-    return PAL_BLUE[Math.floor(Math.min(0.9999,(val-vmin)/(vmax-vmin))*5)];
+
+  // CP style: simulados → color del nuevo factor + borde amarillo grueso
+  const getCpStyle=(cp,cvegeo,esA)=>{
+    if(simActiva&&simCps[cp]!==undefined){
+      const obj=simCps[cp];
+      const fillColor=isNaN(obj)?'#eeeeee':palIdx(Math.max(vmin,Math.min(vmax,obj)),vmin,vmax);
+      return{fillColor,fillOpacity:0.85,color:'#ca8a04',weight:2.5,opacity:1};
+    }
+    const val=getValCp(cp,cvegeo,esA,datos);
+    const fillColor=isNaN(val)?'#eeeeee':palIdx(val,vmin,vmax);
+    return{fillColor,fillOpacity:0.85,color:esA?'#cc0000':'#1e3a8a',weight:0.6,opacity:1};
   };
+
   const getHTMLCp=(cp,cvegeo,esA)=>tooltipCp(cp,cvegeo,esA,getValCp(cp,cvegeo,esA,datos));
-  buildLayers(getColorMun,(cv,nom)=>tooltipMun(nom,datos[cv]),getColorCp,getHTMLCp,showCp);
+  buildLayers(getColorMun,(cv,nom)=>tooltipMun(nom,datos[cv]),getCpStyle,getHTMLCp,showCp);
+  renderSimRows();
 }
 
-// ── Modo Incidencia ───────────────────────────────────────────────────────────
 function calcTotales(){
   const t={};
   for(const r of INC_ROWS){
-    if(!filtros.subtipos.has(r.subtipo))    continue;
-    if(!filtros.modalidad.has(r.modalidad)) continue;
-    let v=0;
-    for(const mes of filtros.meses) v+=r[mes]||0;
+    if(!filtros.subtipos.has(r.subtipo)||!filtros.modalidad.has(r.modalidad))continue;
+    let v=0;for(const mes of filtros.meses)v+=r[mes]||0;
     t[r.cvegeo]=(t[r.cvegeo]||0)+v;
   }
   return t;
 }
-
 function updateIncidencia(){
   const totales=calcTotales();
   const vals=Object.values(totales).filter(v=>v>0);
@@ -307,69 +362,219 @@ function updateIncidencia(){
   document.getElementById('i-total').textContent=total.toLocaleString('es-MX');
   document.getElementById('i-munis').textContent=nMunis;
   document.getElementById('hdr-resumen').textContent=
-    `${total.toLocaleString('es-MX')} delitos · ${nMunis} municipios · 2025`;
-  setLegend('Delitos 2025',0,vmax,PAL_ORANGE,false);
-
+    total.toLocaleString('es-MX')+' delitos · '+nMunis+' municipios · 2025';
+  setLegend('Delitos 2025',0,vmax,PAL_ORANGE,false,false);
   const getColorMun=cv=>{
-    const v=totales[cv]||0; if(v===0) return '#F1F5F9';
+    const v=totales[cv]||0;if(v===0)return'#F1F5F9';
     return PAL_ORANGE[Math.floor(Math.min(0.9999,v/vmax)*5)];
   };
-  const getHTMLMun=(cv,nom)=>`<b>${nom}</b><span class="val val-orange">${(totales[cv]||0).toLocaleString('es-MX')}</span><br><small>delitos seleccionados</small>`;
+  const getHTMLMun=(cv,nom)=>'<b>'+nom+'</b><span class="val val-orange">'+(totales[cv]||0).toLocaleString('es-MX')+'</span><br><small>delitos seleccionados</small>';
   buildLayers(getColorMun,getHTMLMun,null,null,false);
 }
 
-// ── Modo ──────────────────────────────────────────────────────────────────────
 function setMode(mode){
   currentMode=mode;
   document.querySelectorAll('.mode-tab').forEach((t,i)=>
     t.classList.toggle('active',(i===0&&mode==='factores')||(i===1&&mode==='incidencia')));
   document.querySelectorAll('.sec-factores').forEach(el=>el.style.display=mode==='factores'?'block':'none');
   document.querySelectorAll('.sec-incidencia').forEach(el=>el.style.display=mode==='incidencia'?'block':'none');
-  if(mode==='factores') updateFactores(); else updateIncidencia();
+  if(mode==='factores')updateFactores();else updateIncidencia();
 }
 
-// ── Controles factores ────────────────────────────────────────────────────────
 const cobTabsEl=document.getElementById('cob-tabs');
 COBERTURAS.forEach(cob=>{
   const t=document.createElement('div');
   t.className='cob-tab'+(cob===currentCob?' active':'');
   t.textContent=cob;
-  t.onclick=()=>{document.querySelectorAll('.cob-tab').forEach(x=>x.classList.remove('active'));
-    t.classList.add('active'); currentCob=cob; updateFactores();};
+  t.onclick=()=>{
+    document.querySelectorAll('.cob-tab').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    currentCob=cob;
+    // Al cambiar cobertura: resetear factores simulados al actual de la nueva cobertura
+    Object.keys(simCps).forEach(cp=>{
+      const fa=factorActualCp(cp);
+      simCps[cp]=!isNaN(fa)?fa:1.0;
+    });
+    updateFactores();
+  };
   cobTabsEl.appendChild(t);
 });
 
-// ── Controles incidencia ──────────────────────────────────────────────────────
-function makeChecks(containerId, items, filterKey, labels){
+function makeChecks(containerId,items,filterKey,labels){
   const el=document.getElementById(containerId);
   items.forEach(item=>{
-    const id=`c-${filterKey}-${item.replace(/[^a-z0-9]/gi,'_')}`;
+    const id='c-'+filterKey+'-'+item.replace(/[^a-z0-9]/gi,'_');
     const lab=labels?labels[item]||item:item;
     const div=document.createElement('label');
     div.className='check-item';
-    div.innerHTML=`<input type="checkbox" id="${id}" value="${item}" checked>
-                   <label for="${id}">${lab}</label>`;
+    div.innerHTML='<input type="checkbox" id="'+id+'" value="'+item+'" checked><label for="'+id+'">'+lab+'</label>';
     div.querySelector('input').addEventListener('change',function(){
-      if(this.checked) filtros[filterKey].add(item); else filtros[filterKey].delete(item);
-      if(currentMode==='incidencia') updateIncidencia();
+      if(this.checked)filtros[filterKey].add(item);else filtros[filterKey].delete(item);
+      if(currentMode==='incidencia')updateIncidencia();
     });
     el.appendChild(div);
   });
 }
-
-function toggleAll(containerId, filterKey){
-  const checks=[...document.querySelectorAll(`#${containerId} input`)];
+function toggleAll(containerId,filterKey){
+  const checks=[...document.querySelectorAll('#'+containerId+' input')];
   const anyOff=checks.some(c=>!c.checked);
-  checks.forEach(c=>{
-    c.checked=anyOff;
-    if(anyOff) filtros[filterKey].add(c.value); else filtros[filterKey].delete(c.value);
-  });
-  if(currentMode==='incidencia') updateIncidencia();
+  checks.forEach(c=>{c.checked=anyOff;if(anyOff)filtros[filterKey].add(c.value);else filtros[filterKey].delete(c.value);});
+  if(currentMode==='incidencia')updateIncidencia();
 }
 
-makeChecks('chk-meses',     MESES,       'meses',     null);
-makeChecks('chk-subtipos',  SUBTIPOS,    'subtipos',  null);
-makeChecks('chk-modalidad', MODALIDADES, 'modalidad', LABELS_MOD);
+makeChecks('chk-meses',MESES,'meses',null);
+makeChecks('chk-subtipos',SUBTIPOS,'subtipos',null);
+makeChecks('chk-modalidad',MODALIDADES,'modalidad',LABELS_MOD);
+
+
+// ── Simulador ─────────────────────────────────────────────────────────────────
+
+function parseCpInput(raw) {
+  // Acepta: "54080", "54080,12345,12346", "54080 12345" o mezclas
+  return raw.split(/[\s,;]+/)
+    .map(s => s.trim())
+    .filter(s => /^\d{5}$/.test(s));
+}
+
+function agregarCp() {
+  const input = document.getElementById('sim-cp-input');
+  const cps   = parseCpInput(input.value);
+  if (cps.length === 0) {
+    input.classList.add('invalid');
+    setTimeout(() => input.classList.remove('invalid'), 1000);
+    return;
+  }
+  cps.forEach(cp => {
+    if (simCps[cp] !== undefined) return;
+    const fa  = factorActualCp(cp);
+    simCps[cp] = !isNaN(fa) ? fa : 1.0;
+  });
+  input.value = '';
+  renderSimRows();
+}
+
+function eliminarCpSim(cp) {
+  delete simCps[cp];
+  if (simActiva) updateFactores();
+  renderSimRows();
+}
+
+function renderSimRows() {
+  const container = document.getElementById('sim-rows');
+  const emptyEl   = document.getElementById('sim-empty');
+  const colLabels = document.getElementById('sim-col-labels');
+  const actions   = document.getElementById('sim-actions');
+  const cps       = Object.keys(simCps);
+
+  emptyEl.style.display   = cps.length === 0 ? 'block' : 'none';
+  colLabels.style.display = cps.length === 0 ? 'none'  : 'grid';
+  actions.style.display   = cps.length === 0 ? 'none'  : 'flex';
+
+  container.innerHTML = '';
+  cps.forEach(cp => {
+    const fa  = factorActualCp(cp);
+    const obj = simCps[cp];
+    const pct = (!isNaN(fa) && fa !== 0) ? ((obj - fa) / fa * 100) : NaN;
+
+    const disabledAttr = isNaN(fa) ? 'disabled' : '';
+    const pctVal       = !isNaN(pct) ? pct.toFixed(1) : '';
+    const pctPH        = isNaN(fa)   ? 'sin dato'     : '%';
+
+    const row = document.createElement('div');
+    row.className = 'sim-row';
+    row.innerHTML =
+      '<div style="display:flex;align-items:center;gap:3px">' +
+        '<span class="sim-cp-badge">' + cp + '</span>' +
+        '<span style="font-size:14px;cursor:pointer;color:#aaa" ' +
+              'onclick="eliminarCpSim(\'' + cp + '\')" title="Eliminar">\u00d7</span>' +
+      '</div>' +
+      '<input class="sim-input" id="sim-factor-' + cp + '" type="number" ' +
+             'step="0.0001" min="0" value="' + obj.toFixed(4) + '" ' +
+             'oninput="onFactorChange(\'' + cp + '\', this.value, \'factor\')">' +
+      '<input class="sim-input" id="sim-pct-' + cp + '" type="number" ' +
+             'step="0.1" value="' + pctVal + '" ' +
+             'placeholder="' + pctPH + '" ' + disabledAttr + ' ' +
+             'oninput="onFactorChange(\'' + cp + '\', this.value, \'pct\')">';
+    container.appendChild(row);
+  });
+}
+
+function onFactorChange(cp, rawVal, tipo) {
+  const fa  = factorActualCp(cp);
+  const val = parseFloat(rawVal);
+  if (isNaN(val)) return;
+
+  if (tipo === 'factor') {
+    simCps[cp] = val;
+    if (!isNaN(fa) && fa !== 0) {
+      const pct   = ((val - fa) / fa * 100);
+      const pctEl = document.getElementById('sim-pct-' + cp);
+      if (pctEl && document.activeElement !== pctEl) pctEl.value = pct.toFixed(1);
+    }
+  } else {
+    if (!isNaN(fa)) {
+      simCps[cp]      = Math.round(fa * (1 + val / 100) * 10000) / 10000;
+      const factorEl  = document.getElementById('sim-factor-' + cp);
+      if (factorEl && document.activeElement !== factorEl)
+        factorEl.value = simCps[cp].toFixed(4);
+    }
+  }
+}
+
+function resetSimCambios() {
+  // Reinicia todos los factores simulados al factor actual de la cobertura
+  Object.keys(simCps).forEach(cp => {
+    const fa   = factorActualCp(cp);
+    simCps[cp] = !isNaN(fa) ? fa : 1.0;
+  });
+  renderSimRows();
+}
+
+function aplicarSimulacion() {
+  simActiva = true;
+  document.getElementById('sim-badge').style.display    = 'inline';
+  document.getElementById('btn-quitar-sim').style.display = 'inline-flex';
+  updateFactores();
+}
+
+function quitarSimulacion() {
+  simActiva = false;
+  document.getElementById('sim-badge').style.display    = 'none';
+  document.getElementById('btn-quitar-sim').style.display = 'none';
+  updateFactores();
+}
+
+function limpiarSimulacion() {
+  Object.keys(simCps).forEach(k => delete simCps[k]);
+  simActiva = false;
+  document.getElementById('sim-badge').style.display    = 'none';
+  document.getElementById('btn-quitar-sim').style.display = 'none';
+  renderSimRows();
+  updateFactores();
+}
+
+function exportarCSV() {
+  const cps = Object.keys(simCps);
+  if (cps.length === 0) return;
+  const lines = ['CP,Municipio,Cobertura,Factor actual,Factor objetivo,Cambio %'];
+  cps.forEach(cp => {
+    const cvegeo = CP_ZONA_A[cp] || '';
+    const mun    = CVEGEO_NOMBRE[cvegeo] || cvegeo;
+    const actual = factorActualCp(cp);
+    const obj    = simCps[cp];
+    const pct    = (!isNaN(actual) && actual !== 0)
+                   ? ((obj - actual) / actual * 100).toFixed(2) : '';
+    lines.push(cp + ',"' + mun + '",' + currentCob + ',' +
+               (!isNaN(actual) ? actual.toFixed(4) : '') + ',' +
+               obj.toFixed(4) + ',' + pct);
+  });
+  const blob = new Blob([lines.join('\n')], {type: 'text/csv;charset=utf-8;'});
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href = url; a.download = 'simulacion_' + currentCob.replace(/\s/g, '_') + '.csv';
+  a.click(); URL.revokeObjectURL(url);
+}
+
 
 setMode('factores');
 </script>
